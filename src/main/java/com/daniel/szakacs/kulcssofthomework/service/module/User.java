@@ -1,6 +1,5 @@
 package com.daniel.szakacs.kulcssofthomework.service.module;
 
-import javax.annotation.Generated;
 import javax.persistence.*;
 
 @Entity
