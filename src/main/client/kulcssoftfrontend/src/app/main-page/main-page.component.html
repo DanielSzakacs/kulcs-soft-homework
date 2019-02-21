@@ -1,3 +1,27 @@
-<p>
-  main-page works!
-</p>
+<div class="card">
+  <div class="card-title">
+    Registration
+  </div>
+  <div class="card-body">
+    <form #registrationform = "ngForm" (submit)="registartion(registrationform.value)">
+      <input class="text-input-dialog" type="text" name="name" placeholder="name" ngModel required><br>
+      <input class="text-input-dialog" type="text" name="email" placeholder="email" ngModel required><br>
+      <input type="password" name="password" placeholder="password" ngModel required><br>
+      <button class="btn btn-danger submit" type="submit">Submit</button>
+    </form>
+  </div>
+  <br>
+  <hr>
+  <div class="card-title">
+    Log in
+  </div>
+  <div class="card-body">
+    <form #registrationform = "ngForm" (submit)="login(registrationform.value)">
+      <input class="text-input-dialog" type="text" name="name" placeholder="name" ngModel required><br>
+      <input class="text-input-dialog" type="text" name="email" placeholder="email" ngModel required><br>
+      <input type="password" name="password" placeholder="password" ngModel required><br>
+      <button class="btn btn-danger submit" type="submit">Submit</button>
+    </form>
+  </div>
+
+</div>

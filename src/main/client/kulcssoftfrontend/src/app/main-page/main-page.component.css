@@ -1,0 +1,9 @@
+.card{
+  float: right;
+  border-style: solid;
+  border-color: black;
+  border-radius: 3%;
+  border-width: 1px;
+  margin-right: 45%;
+  margin-top: 12em;
+}

@@ -12,4 +12,12 @@ export class MainPageComponent implements OnInit {
   ngOnInit() {
   }
 
+  registartion(data) {
+
+  }
+
+  login(data){
+
+  }
+
 }
