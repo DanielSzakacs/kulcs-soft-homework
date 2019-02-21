@@ -9,8 +9,7 @@ public class SecurityManger {
     private PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
-    @Bean
+    
     public String hashingCode(String password){
         return passwordEncoder().encode(password);
     }
