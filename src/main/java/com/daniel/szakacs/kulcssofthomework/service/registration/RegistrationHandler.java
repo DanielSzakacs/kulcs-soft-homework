@@ -1,7 +1,8 @@
 package com.daniel.szakacs.kulcssofthomework.service.registration;
 
 import com.daniel.szakacs.kulcssofthomework.service.module.User;
-import com.daniel.szakacs.kulcssofthomework.service.repository.Userrepository;
+
+import com.daniel.szakacs.kulcssofthomework.DAO.repository.Userrepository;
 import com.daniel.szakacs.kulcssofthomework.service.security.SecurityManger;
 import org.springframework.beans.factory.annotation.Autowired;
 

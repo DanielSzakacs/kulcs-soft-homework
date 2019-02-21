@@ -1,4 +1,4 @@
-package com.daniel.szakacs.kulcssofthomework.service.repository;
+package com.daniel.szakacs.kulcssofthomework.DAO.repository;
 
 import com.daniel.szakacs.kulcssofthomework.service.module.User;
 import org.springframework.data.jpa.repository.JpaRepository;
