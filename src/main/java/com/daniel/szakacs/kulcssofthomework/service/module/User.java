@@ -15,9 +15,13 @@ public class User {
     @Column(name = "email")
     private String email;
 
-    public User(String name, String email) {
+    @Column(name = "password")
+    private String password;
+
+    public User(String name, String email, String password) {
         this.name = name;
         this.email = email;
+        this.password = password;
     }
 
     public Long getId() {
@@ -30,5 +34,9 @@ public class User {
 
     public String getEmail() {
         return email;
+    }
+
+    public String getPassword(){
+        return password;
     }
 }
