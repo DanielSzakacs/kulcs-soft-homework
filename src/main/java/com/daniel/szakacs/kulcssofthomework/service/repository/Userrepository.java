@@ -6,4 +6,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public interface Userrepository extends JpaRepository<User, Long> {
+
+    //Used for registration and login
+    boolean existsByEmail(String email);
+
+    //Used for Login
+    User getByEmail(String email);
+
+
 }
