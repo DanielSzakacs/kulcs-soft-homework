@@ -2,6 +2,8 @@ package com.daniel.szakacs.kulcssofthomework.controller;
 
 import com.daniel.szakacs.kulcssofthomework.DAO.repository.Userrepository;
 import com.daniel.szakacs.kulcssofthomework.service.login.Login;
+import com.sun.org.apache.xerces.internal.util.Status;
+import jdk.net.SocketFlow;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,7 +24,11 @@ public class LoginController {
 
 
     @PostMapping("/login")
-    public void makeLogin(@RequestBody Map<String, String> loginData){
-        login.isUserEmailAndPasswordCorrect(loginData.get("email"), loginData.get("password"), userrepository);
+    public SocketFlow.Status makeLogin(@RequestBody Map<String, String> loginData){
+        if(login.isUserEmailAndPasswordCorrect(loginData.get("email"), loginData.get("password"), userrepository)){
+            return SocketFlow.Status.OK;
+        }
+        return SocketFlow.Status.NOT_SUPPORTED;
+
     }
 }

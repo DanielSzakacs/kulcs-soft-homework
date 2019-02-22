@@ -3,6 +3,7 @@ package com.daniel.szakacs.kulcssofthomework.service.module;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "user")
 public class User {
 
     @Id

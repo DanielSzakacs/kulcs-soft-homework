@@ -4,9 +4,11 @@ import com.daniel.szakacs.kulcssofthomework.service.module.User;
 import com.daniel.szakacs.kulcssofthomework.DAO.repository.Userrepository;
 import com.daniel.szakacs.kulcssofthomework.service.security.SecurityManger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.security.InvalidAlgorithmParameterException;
 
+@Service
 public class Login {
 
     @Autowired
