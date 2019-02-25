@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
 import {AlertsModule} from "angular-alert-module";
 import { AdminPageComponent } from './admin-page/admin-page.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { AdminPageComponent } from './admin-page/admin-page.component';
     HttpClientModule,
     AlertsModule.forRoot()
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
