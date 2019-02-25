@@ -1,0 +1,27 @@
+.card{
+  float: right;
+  border-style: solid;
+  border-color: black;
+  border-radius: 3%;
+  border-width: 1px;
+  margin-right: 45%;
+  margin-top: 12em;
+
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+}
+
+.usersList {
+  float: left;
+  border-style: solid;
+  border-color: black;
+  border-radius: 5%;
+  border-width: 1px;
+
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+}

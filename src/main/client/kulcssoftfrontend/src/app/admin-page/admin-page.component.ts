@@ -10,6 +10,8 @@ import {HttpClient} from "@angular/common/http";
 })
 export class AdminPageComponent implements OnInit {
 
+  listOfUsers : object;
+
   constructor(private adminCookieHandler: CookieHandlerService, private mainPageComponent : MainPageComponent,
               private http : HttpClient) { }
 
@@ -22,6 +24,6 @@ export class AdminPageComponent implements OnInit {
   }
 
   saveUser(data){
-
+    console.log(data);
   }
 }

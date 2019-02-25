@@ -1,11 +1,13 @@
-<p>
-  admin-page works!
-</p>
-<div class="saveuserform">
+
+<div class="usersList">
+dsadasdad
+</div>
+<div #saveUserForm class="card">
   <form #userform = "ngForm" (submit)="saveUser(userform.value)">
-    <input type="text" placeholder="name" required ngModel>
-    <input type="text" placeholder="email" required ngModel>
+    <input name="name" type="text" placeholder="name" required ngModel> <br>
+    <input name="email" type="text" placeholder="email" required ngModel><br>
     <button class="btn btn-info" type="submit">Save</button>
   </form>
-</div>
+  <hr>
 <button class="btn btn-danger" (click)="logout()">Log out</button>
+</div>
