@@ -1,7 +1,7 @@
 package com.daniel.szakacs.kulcssofthomework.service.login;
 
-import com.daniel.szakacs.kulcssofthomework.service.module.User;
-import com.daniel.szakacs.kulcssofthomework.DAO.repository.Userrepository;
+import com.daniel.szakacs.kulcssofthomework.service.module.Admin;
+import com.daniel.szakacs.kulcssofthomework.DAO.repository.AdminRepo;
 import com.daniel.szakacs.kulcssofthomework.service.security.SecurityManger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ public class Login {
     private SecurityManger securityManger;
 
     // TODO ez a fő method
-    public boolean isUserEmailAndPasswordCorrect(String email, String password, Userrepository userRepository) {
+    public boolean isUserEmailAndPasswordCorrect(String email, String password, AdminRepo userRepository) {
         if(userRepository.existsByEmail(email)){
             return isPasswordCorrect(email, password, userRepository);
         }else{
@@ -24,9 +24,9 @@ public class Login {
         return false;
     }
 
-    public boolean isPasswordCorrect(String email, String password, Userrepository userRepository){
-        User user = userRepository.getByEmail(email);
-        String userHashedPassword = user.getPassword();
+    public boolean isPasswordCorrect(String email, String password, AdminRepo userRepository){
+        Admin admin = userRepository.getByEmail(email);
+        String userHashedPassword = admin.getPassword();
         return securityManger.matchPasswords(password, userHashedPassword);
     }
 

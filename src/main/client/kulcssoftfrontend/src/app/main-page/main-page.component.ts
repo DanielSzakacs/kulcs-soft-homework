@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewContainerRef} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment.prod";
+import {AlertsService} from "angular-alert-module";
 
 @Component({
   selector: 'app-main-page',
@@ -11,17 +12,19 @@ export class MainPageComponent implements OnInit {
 
   links = environment;
 
-  constructor(private http : HttpClient) { }
+  constructor(private http : HttpClient, private alerts : AlertsService){}
 
   ngOnInit() {
+    this.alerts.setDefaults('timeout',2);
+    //this.alerts.setConfig('warn','icon','baseline');
   }
 
   registration(data) {
     this.http.post(this.links.mainUrl + "/registration", data).subscribe(res => {
-      console.log(res)
+      this.alerts.setMessage('Your registration is succeed', 'success');
     },
       error1 => {
-      console.log(error1)
+      this.alerts.setMessage('Something wrong try registration latter', 'warn');
       })
   }
 
