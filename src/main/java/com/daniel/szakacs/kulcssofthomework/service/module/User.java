@@ -3,8 +3,8 @@ package com.daniel.szakacs.kulcssofthomework.service.module;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "admin")
-public class Admin {
+@Table(name = "user")
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -13,25 +13,19 @@ public class Admin {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "password")
-    private String password;
+    @Column(name = "userName")
+    private String userName;
 
-    public Admin(){}
-
-    public Admin(String email, String password) {
+    public User(String email, String userName) {
         this.email = email;
-        this.password = password;
-    }
-
-    public Long getId() {
-        return id;
+        this.userName = userName;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public String getPassword(){
-        return password;
+    public String getUserName() {
+        return userName;
     }
 }

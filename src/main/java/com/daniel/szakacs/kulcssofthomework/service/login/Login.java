@@ -4,9 +4,8 @@ import com.daniel.szakacs.kulcssofthomework.service.module.Admin;
 import com.daniel.szakacs.kulcssofthomework.DAO.repository.AdminRepo;
 import com.daniel.szakacs.kulcssofthomework.service.security.SecurityManger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.security.InvalidAlgorithmParameterException;
 
 @Service
 public class Login {
@@ -19,15 +18,13 @@ public class Login {
         if(userRepository.existsByEmail(email)){
             return isPasswordCorrect(email, password, userRepository);
         }else{
-            new InvalidAlgorithmParameterException("Your email is not correct");
+            return false;
         }
-        return false;
     }
 
-    public boolean isPasswordCorrect(String email, String password, AdminRepo userRepository){
+    private boolean isPasswordCorrect(String email, String inputPassword, AdminRepo userRepository){
         Admin admin = userRepository.getByEmail(email);
-        String userHashedPassword = admin.getPassword();
-        return securityManger.matchPasswords(password, userHashedPassword);
+        return new BCryptPasswordEncoder().matches(inputPassword, admin.getPassword()); // TODO this is should be in a lover level in the Security class.
     }
 
 

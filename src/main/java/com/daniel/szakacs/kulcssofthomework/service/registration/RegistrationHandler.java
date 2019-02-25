@@ -27,7 +27,7 @@ public class RegistrationHandler {
         }
     }
 
-    private Admin createUser(String password, String email){
+    private Admin createUser(String email, String password){
         return new Admin(email, password);
     }
 

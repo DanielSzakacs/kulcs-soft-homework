@@ -16,7 +16,6 @@ public class SecurityManger {
         return passwordEncoder().encode(password);
     }
 
-
     public boolean matchPasswords(String password, String hashedPassword){
         return passwordEncoder().matches(password, hashedPassword);
     }

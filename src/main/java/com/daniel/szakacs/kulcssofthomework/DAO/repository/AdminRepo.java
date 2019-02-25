@@ -12,6 +12,4 @@ public interface AdminRepo extends JpaRepository<Admin, Long> {
 
     //Used for Login
     Admin getByEmail(String email);
-
-
 }
