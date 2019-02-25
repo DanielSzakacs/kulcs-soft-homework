@@ -24,7 +24,8 @@ public class Login {
 
     private boolean isPasswordCorrect(String email, String inputPassword, AdminRepo userRepository){
         Admin admin = userRepository.getByEmail(email);
-        return new BCryptPasswordEncoder().matches(inputPassword, admin.getPassword()); // TODO this is should be in a lover level in the Security class.
+        return securityManger.matchPasswords(inputPassword, admin.getPassword());
+        //return new BCryptPasswordEncoder().matches(inputPassword, admin.getPassword()); // TODO this is should be in a lover level in the Security class.
     }
 
 
