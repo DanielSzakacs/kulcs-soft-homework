@@ -3,7 +3,7 @@
     Registration
   </div>
   <div class="card-body">
-    <form #registrationform = "ngForm" (submit)="registartion(registrationform.value)">
+    <form #registrationform = "ngForm" (submit)="registration(registrationform.value)">
       <input class="text-input-dialog" type="text" name="name" placeholder="name" ngModel required><br>
       <input class="text-input-dialog" type="text" name="email" placeholder="email" ngModel required><br>
       <input type="password" name="password" placeholder="password" ngModel required><br>

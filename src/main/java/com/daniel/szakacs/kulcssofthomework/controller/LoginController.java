@@ -24,11 +24,13 @@ public class LoginController {
 
 
     @PostMapping("/login")
-    public SocketFlow.Status makeLogin(@RequestBody Map<String, String> loginData){
-        if(login.isUserEmailAndPasswordCorrect(loginData.get("email"), loginData.get("password"), userrepository)){
-            return SocketFlow.Status.OK;
-        }
-        return SocketFlow.Status.NOT_SUPPORTED;
+    public SocketFlow.Status makeLogin(@RequestBody Object loginData){
+        System.out.println("This is the login data: " + loginData);
+//        if(login.isUserEmailAndPasswordCorrect(loginData.get("email"), loginData.get("password"), userrepository)){
+//            return SocketFlow.Status.OK;
+//        }
+//        return SocketFlow.Status.NOT_SUPPORTED;
+        return SocketFlow.Status.OK;
 
     }
 }
