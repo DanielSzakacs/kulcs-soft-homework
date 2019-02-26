@@ -3,26 +3,28 @@ package com.daniel.szakacs.kulcssofthomework.service.module;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "email")
-    private String email;
+    @Column(name = "emailaddress")
+    private String emailaddress;
 
-    @Column(name = "userName")
+    @Column(name = "username")
     private String userName;
 
+    public User(){}
+
     public User(String email, String userName) {
-        this.email = email;
+        this.emailaddress = email;
         this.userName = userName;
     }
 
     public String getEmail() {
-        return email;
+        return emailaddress;
     }
 
     public String getUserName() {
