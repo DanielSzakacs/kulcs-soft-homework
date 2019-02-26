@@ -21,4 +21,8 @@ public class UserHandler {
     public Set<User> getAllUser(){
         return this.userRepo.findAllByOrderById();
     }
+
+    public void deleteUserById(String email){
+        this.userRepo.removeAllByEmail(email);
+    }
 }

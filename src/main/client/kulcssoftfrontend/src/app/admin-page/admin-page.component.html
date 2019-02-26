@@ -1,6 +1,11 @@
 
 <div class="usersList">
-dsadasdad
+  <div *ngFor="let user of listOfUsers">
+    User name : {{user['userName']}} <br>
+    Email: {{user['email']}}
+    <button class=" btn btn-danger" (click)="deleteUser(user['email'])">delete</button>
+    <hr><br>
+  </div>
 </div>
 <div #saveUserForm class="card">
   <form #userform = "ngForm" (submit)="saveUser(userform.value)">
@@ -10,5 +15,4 @@ dsadasdad
   </form>
   <hr>
   <button class="btn btn-danger" (click)="logout()">Log out</button>
-  <button class="btn btn-danger" (click)="getAllUser()">Get All User</button>
 </div>

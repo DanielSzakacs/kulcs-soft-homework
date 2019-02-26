@@ -10,8 +10,8 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "emailaddress")
-    private String emailaddress;
+    @Column(name = "email")
+    private String email;
 
     @Column(name = "username")
     private String userName;
@@ -19,12 +19,12 @@ public class User {
     public User(){}
 
     public User(String email, String userName) {
-        this.emailaddress = email;
+        this.email = email;
         this.userName = userName;
     }
 
     public String getEmail() {
-        return emailaddress;
+        return email;
     }
 
     public String getUserName() {

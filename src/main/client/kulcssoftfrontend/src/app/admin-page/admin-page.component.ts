@@ -18,6 +18,7 @@ export class AdminPageComponent implements OnInit {
               private http : HttpClient) { }
 
   ngOnInit() {
+    this.getAllUser();
   }
 
   logout(){
@@ -26,10 +27,8 @@ export class AdminPageComponent implements OnInit {
   }
 
   saveUser(data){
-    console.log('U pressed the save button');
-    console.log(data);
     this.http.post(this.links.mainUrl + "/saveuser", data).subscribe(res => {
-      console.log(res);
+      this.getAllUser();
     },
       error1 => {
       console.log(error1)
@@ -38,10 +37,22 @@ export class AdminPageComponent implements OnInit {
 
   getAllUser(){
     this.http.get(this.links.mainUrl + "/get_all_user").subscribe(res => {
-      console.log(res);
+      this.listOfUsers = res;
     },
       error1 => {
       console.log(error1);
       })
+  }
+
+  deleteUser(email : string){
+    console.log('this is the useremil when deleting it. ' + email);
+    this.http.delete(this.links.mainUrl + "/delete_user?user=" + email).subscribe(res => {
+      console.log(res);
+      this.getAllUser();
+    },
+      error1 => {
+      console.log(error1)
+      });
+    this.getAllUser();
   }
 }

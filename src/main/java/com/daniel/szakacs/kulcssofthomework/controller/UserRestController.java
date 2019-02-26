@@ -26,4 +26,9 @@ public class UserRestController {
         return userHandler.getAllUser();
     }
 
+    @DeleteMapping("/delete_user")
+    public void deleteUser(@RequestParam(name = "user", required = true) String email){
+        this.userHandler.deleteUserById(email);
+    }
+
 }
