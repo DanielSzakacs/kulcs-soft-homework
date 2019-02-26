@@ -12,12 +12,6 @@ public interface UserRepo extends JpaRepository<User, Long> {
 
     Set<User> findAllByOrderById();
 
-    void deleteByEmail(String email);
-
-    void removeByEmail(String email);
-
-    void removeUserByEmail(String email);
-
     @Transactional
     void removeAllByEmail(String email);
 }
